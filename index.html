@@ -132,9 +132,13 @@ input,select{
 <button onclick="selectPack('5600',6000)">Choisir</button>
 </div>
 </div>
-
+<option value="10000">10 000 💎 — 10 000 HTG</option>
+<option value="20000">20 000 💎 — 25 000 HTG</option>
+<option value="booyah">🎫 Booyah Pass — 500 HTG</option>
 <div class="card">
-<h2>🛒 Nouvelle commande</h2>
+<h2>🛒 Nouvelle commande</h2>"10000":10000,
+"20000":25000,
+"booyah":500
 
 <label>ID joueur Free Fire</label>
 <input id="playerId" placeholder="Ex: 123456789">
@@ -297,3 +301,17 @@ showOrders();
 
 </body>
   </html>
+<div class="pack">
+<span>10 000 💎 — 10 000 HTG</span>
+<button onclick="selectPack('10000',10000)">Choisir</button>
+</div>
+
+<div class="pack">
+<span>20 000 💎 — 25 000 HTG</span>
+<button onclick="selectPack('20000',25000)">Choisir</button>
+</div>
+
+<div class="pack">
+<span>🎫 Booyah Pass — 500 HTG</span>
+<button onclick="selectPack('booyah',500)">Choisir</button>
+</div>
