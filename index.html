@@ -7,303 +7,576 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#080b12;color:white}
-header{background:#111827;padding:20px;text-align:center;border-bottom:1px solid #263044}
-.logo{font-size:28px;font-weight:bold}
-.logo span{color:#ff7a00}
-.container{max-width:600px;margin:auto;padding:20px}
-.card{background:#111827;border:1px solid #263044;border-radius:15px;padding:18px;margin-bottom:18px}
-h2{margin-top:0}
-.pack{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#182132;padding:14px;margin:10px 0;border-radius:10px}
-.pack button,.btn{background:#ff7a00;color:white;border:0;border-radius:8px;padding:10px 15px;font-weight:bold}
-input,select{width:100%;padding:13px;margin:8px 0 12px;border-radius:8px;border:1px solid #374151;background:#0b1220;color:white}
-.notice{background:#172033;padding:12px;border-radius:10px;font-size:14px;line-height:1.5}
-.order{border-top:1px solid #293448;padding:12px 0}
-.status{color:#ffc107;font-weight:bold}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#080b12;
+  color:white;
+}
+
+header{
+  background:#111827;
+  padding:20px;
+  text-align:center;
+  border-bottom:1px solid #263044;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#ff7a00;
+}
+
+.container{
+  max-width:650px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#111827;
+  border:1px solid #263044;
+  border-radius:15px;
+  padding:18px;
+  margin-bottom:18px;
+}
+
+h2{
+  margin-top:0;
+}
+
+.pack{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  background:#182132;
+  padding:14px;
+  margin:10px 0;
+  border-radius:10px;
+}
+
+button,.btn{
+  background:#ff7a00;
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:10px 15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+input,select{
+  width:100%;
+  padding:13px;
+  margin:8px 0 12px;
+  border-radius:8px;
+  border:1px solid #374151;
+  background:#0b1220;
+  color:white;
+}
+
+.notice{
+  background:#172033;
+  padding:12px;
+  border-radius:10px;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.order{
+  border-top:1px solid #293448;
+  padding:14px 0;
+}
+
+.status{
+  color:#ffc107;
+  font-weight:bold;
+}
+
+.success{
+  color:#22c55e;
+  font-weight:bold;
+}
+
+.error{
+  color:#ef4444;
+  font-weight:bold;
+}
+
+.small{
+  font-size:13px;
+  color:#aeb8c8;
+}
+
+#adminPanel{
+  display:none;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#7d8798;
+  font-size:13px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">HT<span>TOPUP</span></div>
-<div>Free Fire Top-Up 🇭🇹</div>
+  <div class="logo">HT<span>TOPUP</span></div>
+  <div>Free Fire Top-Up 🇭🇹</div>
 </header>
 
 <div class="container">
 
+<!-- PACKS -->
 <div class="card">
-<h2>💎 Acheter des diamants</h2>
+  <h2>💎 Acheter des diamants</h2>
 
-<div class="pack"><span>110 💎 — 100 HTG</span><button onclick="selectPack('110')">Choisir</button></div>
-<div class="pack"><span>310 💎 — 300 HTG</span><button onclick="selectPack('310')">Choisir</button></div>
-<div class="pack"><span>520 💎 — 500 HTG</span><button onclick="selectPack('520')">Choisir</button></div>
-<div class="pack"><span>1060 💎 — 1000 HTG</span><button onclick="selectPack('1060')">Choisir</button></div>
-<div class="pack"><span>2180 💎 — 2200 HTG</span><button onclick="selectPack('2180')">Choisir</button></div>
-<div class="pack"><span>5600 💎 — 6000 HTG</span><button onclick="selectPack('5600')">Choisir</button></div>
-<div class="pack"><span>10 000 💎 — 10 000 HTG</span><button onclick="selectPack('10000')">Choisir</button></div>
-<div class="pack"><span>20 000 💎 — 25 000 HTG</span><button onclick="selectPack('20000')">Choisir</button></div>
-<div class="pack"><span>🎫 Booyah Pass — 500 HTG</span><button onclick="selectPack('booyah')">Choisir</button></div>
+  <div class="pack">
+    <span>110 💎 — 100 HTG</span>
+    <button onclick="selectPack('110')">Choisir</button>
+  </div>
 
+  <div class="pack">
+    <span>310 💎 — 300 HTG</span>
+    <button onclick="selectPack('310')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>520 💎 — 500 HTG</span>
+    <button onclick="selectPack('520')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>1060 💎 — 1000 HTG</span>
+    <button onclick="selectPack('1060')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>2180 💎 — 2200 HTG</span>
+    <button onclick="selectPack('2180')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>5600 💎 — 6000 HTG</span>
+    <button onclick="selectPack('5600')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>10 000 💎 — 10 000 HTG</span>
+    <button onclick="selectPack('10000')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>20 000 💎 — 25 000 HTG</span>
+    <button onclick="selectPack('20000')">Choisir</button>
+  </div>
+
+  <div class="pack">
+    <span>🎫 Booyah Pass — 500 HTG</span>
+    <button onclick="selectPack('booyah')">Choisir</button>
+  </div>
 </div>
 
+<!-- COMMANDE -->
 <div class="card">
-<h2>🛒 Nouvelle commande</h2>
+  <h2>🛒 Nouvelle commande</h2>
 
-<label>ID joueur Free Fire</label>
-<input id="playerId" placeholder="Ex: 123456789">
+  <label>ID joueur Free Fire</label>
+  <input id="playerId" placeholder="Ex : 123456789">
 
-<label>Produit</label>
-<select id="diamonds">
-<option value="">Choisir un produit</option>
-<option value="110">110 💎 — 100 HTG</option>
-<option value="310">310 💎 — 300 HTG</option>
-<option value="520">520 💎 — 500 HTG</option>
-<option value="1060">1060 💎 — 1000 HTG</option>
-<option value="2180">2180 💎 — 2200 HTG</option>
-<option value="5600">5600 💎 — 6000 HTG</option>
-<option value="10000">10 000 💎 — 10 000 HTG</option>
-<option value="20000">20 000 💎 — 25 000 HTG</option>
-<option value="booyah">🎫 Booyah Pass — 500 HTG</option>
-</select>
+  <label>Produit</label>
+  <select id="product">
+    <option value="">Choisir un produit</option>
+    <option value="110">110 💎 — 100 HTG</option>
+    <option value="310">310 💎 — 300 HTG</option>
+    <option value="520">520 💎 — 500 HTG</option>
+    <option value="1060">1060 💎 — 1000 HTG</option>
+    <option value="2180">2180 💎 — 2200 HTG</option>
+    <option value="5600">5600 💎 — 6000 HTG</option>
+    <option value="10000">10 000 💎 — 10 000 HTG</option>
+    <option value="20000">20 000 💎 — 25 000 HTG</option>
+    <option value="booyah">🎫 Booyah Pass — 500 HTG</option>
+  </select>
 
-<<label>Moyen de paiement</label>
-<select id="payment">
-<option value="MonCash">MonCash</option>
-<option value="NatCash">NatCash</option>
-<option value="HandyPay">Carte bancaire</option>
-</select>
-<div class="notice">
-<strong>💳 Informations de paiement</strong><br>
-MonCash : <strong>34674175</strong><br>
-NatCash : <strong>41318772</strong><br>
-Carte bancaire : <strong>HandyPay</strong>
+  <label>Moyen de paiement</label>
+  <select id="payment" onchange="showPaymentInfo()">
+    <option value="">Choisir</option>
+    <option value="MonCash">MonCash</option>
+    <option value="NatCash">NatCash</option>
+    <option value="HandyPay">Carte bancaire</option>
+  </select>
+
+  <div id="paymentInfo" class="notice" style="display:none;margin-bottom:12px;"></div>
+
+  <button class="btn" onclick="createOrder()">Créer la commande</button>
+
+  <p id="message"></p>
 </div>
-<button class="btn" onclick="createOrder()">Créer la commande</button>
-<p id="message"></p>
-</div>
 
+<!-- HISTORIQUE CLIENT -->
 <div class="card">
-<h2>💰 Recharge de la bourse</h2>
-<div class="notice"><div class="notice">
-💰 <b>Ma bourse : <span id="walletBalance">0</span> HTG</b>
-</div>
-💰 <b>Ma bourse : <span id="walletBalance">0</span> HTG</b>
-</div>
-<div class="notice">
-Pour recharger votre bourse, effectuez le paiement au numéro officiel HTTOPUP puis envoyez la preuve de paiement.
-<br><br>
-⚠️ Le solde n'est ajouté qu'après vérification du paiement.
+  <h2>📋 Mes commandes</h2>
+  <div id="customerOrders">
+    <p class="small">Aucune commande pour le moment.</p>
+  </div>
 </div>
 
-<br>
-
-<label>Montant à recharger (HTG)</label>
-<input id="walletAmount" type="number" placeholder="Ex: 500">
-
-<button class="btn" onclick="walletRequest()">Demander une recharge</button>
-<p id="walletMessage"></p>
-</div>
-
+<!-- ADMIN -->
 <div class="card">
-<h2>📋 Mes commandes</h2>
-<div id="orders">Aucune commande pour le moment.</div>
+  <h2>🔐 Espace Admin</h2>
+
+  <input
+    type="password"
+    id="adminPassword"
+    placeholder="Mot de passe admin"
+  >
+
+  <button onclick="loginAdmin()">Se connecter</button>
+
+  <p id="adminMessage"></p>
+
+  <div id="adminPanel">
+
+    <div class="notice">
+      <strong>Gestion des commandes</strong><br>
+      Vérifie toujours le paiement avant de traiter une commande.
+    </div>
+
+    <br>
+
+    <button onclick="displayAdminOrders()">🔄 Actualiser</button>
+
+    <div id="adminOrders"></div>
+
+  </div>
 </div>
 
 </div>
+
+<footer>
+  HTTOPUP 🇭🇹 — Free Fire Top-Up
+</footer>
 
 <script>
 
-const prices={
-"110":100,
-"310":300,
-"520":500,
-"1060":1000,
-"2180":2200,
-"5600":6000,
-"10000":10000,
-"20000":25000,
-"booyah":500
+const ADMIN_PASSWORD = "HTTOPUP2026";
+
+const products = {
+  "110": {
+    name:"110 💎",
+    price:100
+  },
+  "310": {
+    name:"310 💎",
+    price:300
+  },
+  "520": {
+    name:"520 💎",
+    price:500
+  },
+  "1060": {
+    name:"1060 💎",
+    price:1000
+  },
+  "2180": {
+    name:"2180 💎",
+    price:2200
+  },
+  "5600": {
+    name:"5600 💎",
+    price:6000
+  },
+  "10000": {
+    name:"10 000 💎",
+    price:10000
+  },
+  "20000": {
+    name:"20 000 💎",
+    price:25000
+  },
+  "booyah": {
+    name:"🎫 Booyah Pass",
+    price:500
+  }
 };
 
-const names={
-"110":"110 💎",
-"310":"310 💎",
-"520":"520 💎",
-"1060":"1060 💎",
-"2180":"2180 💎",
-"5600":"5600 💎",
-"10000":"10 000 💎",
-"20000":"20 000 💎",
-"booyah":"🎫 Booyah Pass"
-};
+function getOrders(){
+  return JSON.parse(
+    localStorage.getItem("httopup_orders") || "[]"
+  );
+}
 
-function selectPack(product){
-document.getElementById("diamonds").value=product;
-document.getElementById("diamonds").scrollIntoView({behavior:"smooth",block:"center"});
+function saveOrders(orders){
+  localStorage.setItem(
+    "httopup_orders",
+    JSON.stringify(orders)
+  );
+}
+
+function selectPack(pack){
+  document.getElementById("product").value = pack;
+
+  document.getElementById("product").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+function showPaymentInfo(){
+
+  const payment =
+    document.getElementById("payment").value;
+
+  const box =
+    document.getElementById("paymentInfo");
+
+  if(!payment){
+    box.style.display="none";
+    box.innerHTML="";
+    return;
+  }
+
+  box.style.display="block";
+
+  if(payment === "MonCash"){
+    box.innerHTML =
+      "<strong>💰 MonCash</strong><br>" +
+      "Envoie le paiement au numéro indiqué par HTTOPUP.";
+  }
+
+  if(payment === "NatCash"){
+    box.innerHTML =
+      "<strong>💰 NatCash</strong><br>" +
+      "Envoie le paiement au numéro indiqué par HTTOPUP.";
+  }
+
+  if(payment === "HandyPay"){
+    box.innerHTML =
+      "<strong>💳 Carte bancaire</strong><br>" +
+      "Le paiement par carte nécessite une véritable intégration HandyPay.";
+  }
 }
 
 function createOrder(){
 
-const playerId=document.getElementById("playerId").value.trim();
-const product=document.getElementById("diamonds").value;
-const payment=document.getElementById("payment").value;
+  const playerId =
+    document.getElementById("playerId").value.trim();
 
-if(!playerId||!product){
-document.getElementById("message").innerHTML="❌ Remplis ton ID joueur et choisis un produit.";
-return;
+  const productId =
+    document.getElementById("product").value;
+
+  const payment =
+    document.getElementById("payment").value;
+
+  const message =
+    document.getElementById("message");
+
+  if(!playerId){
+    message.className="error";
+    message.textContent="❌ Entre ton ID Free Fire.";
+    return;
+  }
+
+  if(!productId){
+    message.className="error";
+    message.textContent="❌ Choisis un produit.";
+    return;
+  }
+
+  if(!payment){
+    message.className="error";
+    message.textContent="❌ Choisis un moyen de paiement.";
+    return;
+  }
+
+  const product = products[productId];
+
+  const order = {
+    id:"HT-" + Date.now(),
+    playerId:playerId,
+    product:product.name,
+    productId:productId,
+    price:product.price,
+    payment:payment,
+    status:"Paiement à vérifier",
+    date:new Date().toLocaleString("fr-FR")
+  };
+
+  const orders = getOrders();
+
+  orders.unshift(order);
+
+  saveOrders(orders);
+
+  message.className="success";
+  message.textContent =
+    "✅ Commande créée. Paiement à vérifier.";
+
+  document.getElementById("playerId").value="";
+  document.getElementById("product").value="";
+  document.getElementById("payment").value="";
+
+  showPaymentInfo();
+  displayCustomerOrders();
 }
 
-const order={
-id:"HT"+Date.now(),
-playerId:playerId,
-product:product,
-productName:names[product],
-price:prices[product],
-payment:payment,
-status:"Paiement à vérifier",
-date:new Date().toLocaleString()
-};
+function displayCustomerOrders(){
 
-let orders=JSON.parse(localStorage.getItem("httopup_orders")||"[]");
-orders.unshift(order);
+  const zone =
+    document.getElementById("customerOrders");
 
-localStorage.setItem("httopup_orders",JSON.stringify(orders));
+  const orders = getOrders();
 
-document.getElementById("message").innerHTML=
-"✅ Commande créée : <b>"+order.id+"</b>"+
-"<br>💰 Montant : "+order.price+" HTG"+
-"<br>⚠️ Paiement à vérifier."+
-"<br>❗ Les diamants ne sont pas encore considérés comme envoyés.";
+  if(orders.length === 0){
+    zone.innerHTML =
+      '<p class="small">Aucune commande pour le moment.</p>';
+    return;
+  }
 
-document.getElementById("playerId").value="";
-showOrders();
+  zone.innerHTML="";
+
+  orders.forEach(order => {
+
+    const div =
+      document.createElement("div");
+
+    div.className="order";
+
+    div.innerHTML =
+      "<strong>"+order.id+"</strong><br>" +
+      "ID Free Fire : "+order.playerId+"<br>" +
+      "Produit : "+order.product+"<br>" +
+      "Prix : "+order.price+" HTG<br>" +
+      "Paiement : "+order.payment+"<br>" +
+      "Statut : <span class='status'>"+
+      order.status+
+      "</span><br>" +
+      "<span class='small'>"+
+      order.date+
+      "</span>";
+
+    zone.appendChild(div);
+  });
 }
 
-function walletRequest(){
+function loginAdmin(){
 
-const amount=document.getElementById("walletAmount").value;
+  const password =
+    document.getElementById("adminPassword").value;
 
-if(!amount||amount<=0){
-document.getElementById("walletMessage").innerHTML="❌ Entre un montant valide.";
-return;
+  const panel =
+    document.getElementById("adminPanel");
+
+  const message =
+    document.getElementById("adminMessage");
+
+  if(password === ADMIN_PASSWORD){
+
+    panel.style.display="block";
+
+    message.className="success";
+    message.textContent="✅ Accès Admin ouvert.";
+
+    displayAdminOrders();
+
+  }else{
+
+    panel.style.display="none";
+
+    message.className="error";
+    message.textContent="❌ Mot de passe incorrect.";
+  }
 }
 
-document.getElementById("walletMessage").innerHTML=
-"✅ Demande de recharge de <b>"+amount+
-" HTG</b> enregistrée.<br>⚠️ Le solde sera ajouté uniquement après vérification du paiement.";
+function displayAdminOrders(){
+
+  const zone =
+    document.getElementById("adminOrders");
+
+  const orders = getOrders();
+
+  if(orders.length === 0){
+
+    zone.innerHTML =
+      "<p class='small'>Aucune commande pour le moment.</p>";
+
+    return;
+  }
+
+  zone.innerHTML="";
+
+  orders.forEach((order,index) => {
+
+    const div =
+      document.createElement("div");
+
+    div.className="order";
+
+    div.innerHTML =
+      "<strong>"+order.id+"</strong><br>" +
+      "ID Free Fire : "+order.playerId+"<br>" +
+      "Produit : "+order.product+"<br>" +
+      "Prix : "+order.price+" HTG<br>" +
+      "Paiement : "+order.payment+"<br>" +
+      "Date : "+order.date+"<br><br>" +
+
+      "<label>Statut</label>" +
+
+      "<select onchange='changeStatus("+index+", this.value)'>" +
+
+      "<option value='Paiement à vérifier' "+
+      (order.status==="Paiement à vérifier"?"selected":"")+
+      ">Paiement à vérifier</option>" +
+
+      "<option value='Paiement vérifié' "+
+      (order.status==="Paiement vérifié"?"selected":"")+
+      ">Paiement vérifié</option>" +
+
+      "<option value='Top-up traité' "+
+      (order.status==="Top-up traité"?"selected":"")+
+      ">Top-up traité</option>" +
+
+      "<option value='Paiement refusé' "+
+      (order.status==="Paiement refusé"?"selected":"")+
+      ">Paiement refusé</option>" +
+
+      "</select>";
+
+    zone.appendChild(div);
+  });
 }
 
-function showOrders(){
+function changeStatus(index,newStatus){
 
-const orders=JSON.parse(localStorage.getItem("httopup_orders")||"[]");
-const box=document.getElementById("orders");
+  const orders = getOrders();
 
-if(orders.length===0){
-box.innerHTML="Aucune commande pour le moment.";
-return;
+  if(!orders[index]){
+    return;
+  }
+
+  orders[index].status = newStatus;
+
+  saveOrders(orders);
+
+  displayAdminOrders();
+  displayCustomerOrders();
 }
 
-box.innerHTML="";
-
-orders.forEach(order=>{
-
-box.innerHTML+=`
-<div class="order">
-<b>${order.id}</b><br>
-🛍️ ${order.productName}<br>
-🎮 ID : ${order.playerId}<br>
-💰 ${order.price} HTG<br>
-💳 ${order.payment}<br>
-<span class="status">${order.status}</span><br>
-<small>${order.date}</small>
-</div>
-`;
-
-});
-}
-
-showOrders();
+displayCustomerOrders();
 
 </script>
 
 </body>
-                                          </html>
-<!-- ESPACE ADMIN -->
-<div class="card" id="adminSection">
-  <h2>🔐 Espace Admin</h2>
-
-  <label>Mot de passe Admin</label>
-  <input type="password" id="adminPassword" placeholder="Mot de passe">
-
-  <button class="btn" onclick="loginAdmin()">Accéder</button>
-
-  <p id="adminMessage"></p>
-
-  <div id="adminPanel" style="display:none;">
-    <h3>📋 Commandes</h3>
-
-    <<div id="adminOrders">
-  <p>📋 Commandes en attente</p>
-
-  <div class="order">
-    <strong>Commande de test</strong><br>
-    Statut : <span class="status">Paiement à vérifier</span>
-  </div>
-    </div>
-        
-
-<script>
-const ADMIN_PASSWORD = "CHANGE_MOI";
-
-function loginAdmin() {
-  const password = document.getElementById("adminPassword").value;
-  const message = document.getElementById("adminMessage");
-  const panel = document.getElementById("adminPanel");
-if (password === "HTTOPUP2026") {
-    panel.style.display = "block";
-    message.textContent = "✅ Accès Admin ouvert";
-  } else {
-    panel.style.display = "none";
-    message.textContent = "❌ Mot de passe incorrect";
-}
-  
-    
-  }
-}
-</script>
-<button class="btn" onclick="createOrder()">Créer la commande</button>
-<!-- 🔐 ESPACE ADMIN -->
-<div class="card">
-  <h2>🔐 Espace Admin</h2>
-
-  <label>Mot de passe administrateur</label>
-  <input type="password" id="adminPassword" placeholder="Mot de passe">
-
-  <button class="btn" onclick="loginAdmin()">Accéder</button>
-
-  <p id="adminMessage"></p>
-
-  <div id="adminContent" style="display:none;">
-    <h3>📋 Commandes</h3>
-    <div id="adminOrders">
-      <p>Aucune commande à afficher.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-function loginAdmin() {
-  const password = document.getElementById("adminPassword").value;
-  const message = document.getElementById("adminMessage");
-  const content = document.getElementById("adminContent");
-
-  if (password === "HTTOPUP2026") {
-    message.textContent = "✅ Connexion réussie";
-    content.style.display = "block";
-  } else {
-    message.textContent = "❌ Mot de passe incorrect";
-    content.style.display = "none";
-  }
-}
-</script>
+</html>
