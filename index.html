@@ -67,12 +67,18 @@ input,select{width:100%;padding:13px;margin:8px 0 12px;border-radius:8px;border:
 <option value="booyah">🎫 Booyah Pass — 500 HTG</option>
 </select>
 
-<label>Moyen de paiement</label>
+<<label>Moyen de paiement</label>
 <select id="payment">
 <option value="MonCash">MonCash</option>
 <option value="NatCash">NatCash</option>
+<option value="HandyPay">Carte bancaire</option>
 </select>
-
+<div class="notice">
+<strong>💳 Informations de paiement</strong><br>
+MonCash : <strong>34674175</strong><br>
+NatCash : <strong>41318772</strong><br>
+Carte bancaire : <strong>HandyPay</strong>
+</div>
 <button class="btn" onclick="createOrder()">Créer la commande</button>
 <p id="message"></p>
 </div>
