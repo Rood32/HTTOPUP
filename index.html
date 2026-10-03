@@ -258,13 +258,15 @@ function loginAdmin() {
   const password = document.getElementById("adminPassword").value;
   const message = document.getElementById("adminMessage");
   const panel = document.getElementById("adminPanel");
-
-  if (password === HTTOPUP2026) {
+if (password === "HTTOPUP2026") {
     panel.style.display = "block";
     message.textContent = "✅ Accès Admin ouvert";
   } else {
     panel.style.display = "none";
     message.textContent = "❌ Mot de passe incorrect";
+}
+  
+    
   }
 }
 </script>
