@@ -269,3 +269,37 @@ function loginAdmin() {
 }
 </script>
 <button class="btn" onclick="createOrder()">Créer la commande</button>
+<!-- 🔐 ESPACE ADMIN -->
+<div class="card">
+  <h2>🔐 Espace Admin</h2>
+
+  <label>Mot de passe administrateur</label>
+  <input type="password" id="adminPassword" placeholder="Mot de passe">
+
+  <button class="btn" onclick="loginAdmin()">Accéder</button>
+
+  <p id="adminMessage"></p>
+
+  <div id="adminContent" style="display:none;">
+    <h3>📋 Commandes</h3>
+    <div id="adminOrders">
+      <p>Aucune commande à afficher.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function loginAdmin() {
+  const password = document.getElementById("adminPassword").value;
+  const message = document.getElementById("adminMessage");
+  const content = document.getElementById("adminContent");
+
+  if (password === "HTTOPUP2026") {
+    message.textContent = "✅ Connexion réussie";
+    content.style.display = "block";
+  } else {
+    message.textContent = "❌ Mot de passe incorrect";
+    content.style.display = "none";
+  }
+}
+</script>
