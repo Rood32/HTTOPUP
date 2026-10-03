@@ -229,3 +229,42 @@ showOrders();
 
 </body>
                                           </html>
+<!-- ESPACE ADMIN -->
+<div class="card" id="adminSection">
+  <h2>🔐 Espace Admin</h2>
+
+  <label>Mot de passe Admin</label>
+  <input type="password" id="adminPassword" placeholder="Mot de passe">
+
+  <button class="btn" onclick="loginAdmin()">Accéder</button>
+
+  <p id="adminMessage"></p>
+
+  <div id="adminPanel" style="display:none;">
+    <h3>📋 Commandes</h3>
+
+    <div id="adminOrders">
+      <div class="notice">
+        Aucune commande à afficher pour le moment.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const ADMIN_PASSWORD = "CHANGE_MOI";
+
+function loginAdmin() {
+  const password = document.getElementById("adminPassword").value;
+  const message = document.getElementById("adminMessage");
+  const panel = document.getElementById("adminPanel");
+
+  if (password === ADMIN_PASSWORD) {
+    panel.style.display = "block";
+    message.textContent = "✅ Accès Admin ouvert";
+  } else {
+    panel.style.display = "none";
+    message.textContent = "❌ Mot de passe incorrect";
+  }
+}
+</script>
