@@ -326,11 +326,32 @@ function saveOrders(orders){
 }
 
 function selectPack(pack){
-  document.getElementById("product").value = pack;
+const product = document.getElementById("product");
 
-  document.getElementById("product").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
+if(!product){
+alert("Erreur : menu Produit introuvable.");
+return;
+}
+
+product.value = String(pack);
+
+if(product.value !== String(pack)){
+alert("Erreur : ce pack n'existe pas dans le menu.");
+return;
+}
+
+product.dispatchEvent(new Event("change", { bubbles: true }));
+
+product.scrollIntoView({
+behavior: "smooth",
+block: "center"
+});
+                                           }
+  
+
+  
+    
+  
   });
 }
 
