@@ -270,7 +270,26 @@ footer{
 </footer>
 
 <script>
+function selectPack(pack){
+const product = document.getElementById("product");
 
+if (!product) {
+alert("Erreur : menu Produit introuvable.");
+return;
+}
+
+product.value = String(pack);
+
+if (product.value !== String(pack)) {
+alert("Erreur : ce pack n'existe pas dans le menu.");
+return;
+}
+
+product.scrollIntoView({
+behavior: "smooth",
+block: "center"
+});
+}
 const ADMIN_PASSWORD = "HTTOPUP2026";
 
 const products = {
